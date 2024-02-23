@@ -6,7 +6,7 @@ const div = document.querySelector("#gifs");
 
 search.addEventListener("click", (e) => {
     e.preventDefault();
-    appendGif(input.value);
+    DisplayGif(input.value);
 });
 
 remove.addEventListener("click", (e) => {
@@ -23,7 +23,7 @@ async function getGifUrl(term) {
     return res.data.data[randomIdx].images.original.url;
 }
 
-async function appendGif(term) {
+async function DisplayGif(term) {
     input.value = "";
     const img = document.createElement('img');
     img.src = await getGifUrl(term);
